@@ -1,7 +1,9 @@
 import boto3
 from elasticsearch import Elasticsearch,RequestsHttpConnection
+import json
 
 def search(event,context):
+  event = json.loads(event['body'])
   def connectES(esEndPoint):
     print ('Connecting to the ES Endpoint {0}'.format(esEndPoint))
     try:
@@ -23,4 +25,12 @@ def search(event,context):
   else:
     data = es.search(size=10000,from_=0,q='"'+query+'"~5')
   #incorporate vishal's code
-  return data
+  return { 
+      'isBase64Encoded': True,
+      'statusCode': 200,
+      'body': json.dumps(data['hits']['hits']),
+      'headers': {
+         'Content-Type': 'application/json', 
+         'Access-Control-Allow-Origin': '*' 
+     }
+     }

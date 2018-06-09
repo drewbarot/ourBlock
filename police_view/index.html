@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+  <body>
+    <div id="panel">
+    </div>
+    <div id="map">
+    </div>
+    <script type="text/javascript">
+      function initMap() {
+        $.post('https://gony0gqug0.execute-api.us-east-1.amazonaws.com/beta/search',JSON.stringify({'query':''}),function(data) {
+          console.log(data)
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 1,
+            center: {lat: 0, lng: 0}
+          });
+          function pinSymbol(color) {
+            return {
+              path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z M -2,-30 a 2,2 0 1,1 4,0 2,2 0 1,1 -4,0',
+              fillColor: color,
+              fillOpacity: 1,
+              strokeColor: '#000',
+              strokeWeight: 2,
+              scale: 1,
+             };
+          }
+          data.map(function (row) {
+              var myloc = {lat: parseFloat('1'), lng: parseFloat('2')};
+              var marker = new google.maps.Marker({
+                position: myloc,
+                map: map,
+                icon: pinSymbol('red')
+              });
+          })
+        })
+      }
+  </script>
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6yQCFQnx_S7r_y_G-2XE6hd89JLcwqbY&callback=initMap">
+  </script>
+  </body>
+</html>

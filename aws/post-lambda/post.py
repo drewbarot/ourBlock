@@ -1,7 +1,9 @@
 import boto3
 from elasticsearch import Elasticsearch,RequestsHttpConnection
+import json
 
 def post(event,context):
+  event = json.loads(event['body'])
   def connectES(esEndPoint):
     print ('Connecting to the ES Endpoint {0}'.format(esEndPoint))
     try:
@@ -17,5 +19,12 @@ def post(event,context):
       exit(3)
   es = connectES('search-hacktps-2xwfbumjkznhuydichzbdudpe4.us-east-2.es.amazonaws.com')
   es.index(index='data',doc_type='crime',body=event['body'])
-  
-post({'body':{'key':'value'}},None)
+  return { 
+    'isBase64Encoded': True,
+    'statusCode': 200,
+    'body': ''
+    'headers': {
+       'Content-Type': 'application/json', 
+       'Access-Control-Allow-Origin': '*' 
+   }
+  }
