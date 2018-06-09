@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ImageBackground, View, StatusBar } from "react-native";
+import { ImageBackground, View, StatusBar, Alert, StyleSheet } from "react-native";
 import { Container, Button, H3, Text } from "native-base";
 import {
   Left,
@@ -20,6 +20,7 @@ const launchscreenBg = require("../../../assets/launchscreen-bg.png");
 const launchscreenLogo = require("../../../assets/logo-kitchen-sink.png");
 
 class Home extends Component {
+
   render() {
     return (
 
@@ -67,7 +68,7 @@ class Home extends Component {
           <View style={{ marginBottom: 120 }}>
             <Button
               style={{ backgroundColor: "#014225", alignSelf: "center", marginTop: 10, padding: 10 }}
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}
+                onPress={() => this.props.navigation.navigate("DrawerOpen")}
             >
               <Text>Login</Text>
             </Button>
