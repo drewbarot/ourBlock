@@ -1,9 +1,7 @@
 from datetime import datetime
 import json
-
 import os.path
 import collections
-
 
 data = {}
 
@@ -21,10 +19,9 @@ long = -79.509755
 
 id = 0
 
-if len(list(sorted(data.keys()))) == 0:
-    id = 0
-else:
+if len(list(sorted(data.keys()))) != 0:
     id = int(list(data.keys())[len(list(sorted((data.keys())))) - 1]) + 1
+    
     
 date = datetime.now()
 
@@ -37,7 +34,6 @@ year = date.strftime("%Y")
 hour = date.strftime("%H")
 
 data[id] = {"Year": year, "Month": month, "Day": day, "Hour": hour, "Latitude": lat, "Longitude": lat}
-
 
 ordered_data = collections.OrderedDict(sorted(data.items()))
 
