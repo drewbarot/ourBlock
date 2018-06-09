@@ -1,0 +1,37 @@
+{"intents": [
+	{"tag": "Assault",
+	"patterns": ["He’s hitting her", "She’s hitting him", "A person just got punched", "A guy was kicking another person who was on the ground", "He hits me", "She hits me", "He pinned her down", "She pinned him down"],
+	"responses": ["Assault"],
+	"context_set": ""
+	},
+	{"tag": "Auto Theft",
+	"patterns":["A red car was stolen", "A green car was stolen", "That car was hijacked", "An alarm in a car is going off", "My car is gone", "Somebody stole my car", "Somebody took my car"],
+	"responses":["Auto Theft"],
+	"context_set": ""
+	}, 
+	{"tag": "Break & Enter",
+	"patterns":["Somebody broke into my house", "Somebody stole something in my apartment", "Somebody stole something in my house", "Somebody stole something in my condo", "Somebody broke into my apartment unit", "Somebody broke into my condo", "I think he’s breaking into that house", "I think she’s breaking into that condo", "I think he’s breaking into that apartment"],
+	"responses": ["Break & Enter"],
+	"context_set": ""
+	},
+	{"tag": "Homicide",
+	"patterns":["He’s stabbing her", "She’s stabbing him", "Someone is getting stabbed", "Somebody is shot", "He got shot", "She is shot", "He’s bleeding a lot", "She’s bleeding a lot", "Someone is bleeding a lot", "There is a person who is bleeding a lot"],
+	"responses": ["Homicide"],
+	"context_set": ""
+	},
+	{"tag": "Theft",
+	"patterns":["He stole my purse", "She stole my money", "Someone took my phone", "Someone ran off after taking something from a person", "He stole my belongings", "Somebody robbed me"],
+	"responses":["Theft"],
+	"context_set": ""
+	},
+	{"tag": "Bike Theft",
+	"patterns":["He stole my bike", "She stole my bike", "My bike is gone", "Someone took my bike"],
+	"responses": ["Bike Theft"],
+	"context_set": ""
+	},
+	{"tag": "Impaired Driving (Possibly Alcohol Related)",
+	"patterns":["The car is swerving erratically", "The car moving weird", "I think he’s driving drunk", "I think she’s driving drunk", "Driving drunk"],
+	"responses": ["Impaired Driving (Possibly Alcohol Related)"]
+	}
+]
+}
