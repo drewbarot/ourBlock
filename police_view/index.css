@@ -1,9 +1,9 @@
 #panel {
-  width: 25%;
+  float: right;
   height: 100%;
 }
 
 #map {
-  width: 1000px;
+  width: 1500px;
   height: 1000px;
 }
