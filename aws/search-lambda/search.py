@@ -16,7 +16,7 @@ def search(event,context):
       print(E)
       exit(3)
   query = event['query']
-  es = connectES('https://search-hacktps-2xwfbumjkznhuydichzbdudpe4.us-east-2.es.amazonaws.com') #add endpoint
+  es = connectES('search-hacktps-2xwfbumjkznhuydichzbdudpe4.us-east-2.es.amazonaws.com') #add endpoint
   data = []
   if query=='':
     data = es.search(size=10000,from_=0)

@@ -15,7 +15,7 @@ def post(event,context):
       print("Unable to connect to {0}".format(esEndPoint))
       print(E)
       exit(3)
-  es = connectES('https://search-hacktps-2xwfbumjkznhuydichzbdudpe4.us-east-2.es.amazonaws.com')
-  es.create(index='data',doc_type='crime',body=event['body'])
+  es = connectES('search-hacktps-2xwfbumjkznhuydichzbdudpe4.us-east-2.es.amazonaws.com')
+  es.index(index='data',doc_type='crime',body=event['body'])
   
 post({'body':{'key':'value'}},None)

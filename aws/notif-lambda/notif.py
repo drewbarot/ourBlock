@@ -1,6 +1,6 @@
 import boto3
 
-def send(event,context):
+def notif(event,context):
   sqs = boto3.resource('sqs')
   queue = sqs.get_queue_by_name(QueueName=event['id'])
   messages = []
