@@ -38,4 +38,4 @@ data[id] = {"Year": year, "Month": month, "Day": day, "Hour": hour, "Latitude": 
 ordered_data = collections.OrderedDict(sorted(data.items()))
 
 with open('maps.json', 'w') as f:
-    json.dump(ordered_data, f)
+    json.dump(ordered_data, f, indent=4, separators=(',', ': '))
