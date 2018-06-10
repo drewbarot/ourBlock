@@ -1,0 +1,65 @@
+@import "colors";
+@import "mixins";
+
+@mixin scrollbar-theme($color) {
+    $amt: 20%;
+
+    &::-webkit-scrollbar-track {
+        background-color: darken($color, $amt * 1.5);
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $color;
+        border-radius: 0;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: lighten($color, $amt);
+    }
+    &::-webkit-scrollbar-corner {
+        background-color: darken($color, $amt * 1.5);
+    }
+    &.rounded {
+        &::-webkit-scrollbar-track {
+            border-radius: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+        }
+    }
+    &.gradient {
+        &::-webkit-scrollbar-track {
+            @include gradient(darken($color, $amt * 1.5), darken($color, $amt * 2));
+        }
+        &::-webkit-scrollbar-thumb {
+            @include gradient(lighten($color, $amt * 1.2), $color);
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            @include gradient($color, lighten($color, $amt));
+        }
+        &::-webkit-scrollbar-corner {
+            @include gradient($color, darken($color, $amt * 2));
+        }
+    }
+}
+
+.scroll {
+    $thickness: 10px;
+
+    &::-webkit-scrollbar {
+        width: $thickness;
+    }
+    &::-webkit-scrollbar:vertical {
+        width: $thickness;
+    }
+    &::-webkit-scrollbar:horizontal {
+        height: $thickness;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 0;
+    }
+}
+
+@each $color, $hex in $all_colors {
+    .scroll.scroll-#{$color} {
+        @include scrollbar-theme($hex);
+    }
+}
