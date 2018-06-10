@@ -21,12 +21,6 @@ def post(event,context):
       exit(3)
   es = connectES('search-hacktps-2xwfbumjkznhuydichzbdudpe4.us-east-2.es.amazonaws.com')
   es.index(index='data',doc_type='crime',body=event['body'])
-  if 'Description' in event['body']:
-    try:
-      #classified,confidence = classify(event['body'])[0]
-      classified,confidence = None,1 #lol
-    except:
-      classified,confidence = None,1 #lol
   try:
     query_dict = {
       'query': {
@@ -55,6 +49,9 @@ def post(event,context):
                 'gte':event['body']['Longitude']-0.0005,
                 'lte':event['body']['Longitude']+0.0005
               }
+            },
+            'term': {
+              'Class':event['body']['Class']
             }
           }
         }
@@ -63,8 +60,8 @@ def post(event,context):
     num_results = es.search(index='data',doc_type='crime',size=0,body=query_dict)['hits']['total']
   except:
     num_results = 0
-  if 'classified' in ['Assault','Homicide','Sexual Assault'] or (confidence>0.5 and num_results>1):
-    requests = requests.post('https://gony0gqug0.execute-api.us-east-1.amazonaws.com/beta/send',data={'id':'_all','body':'Crime reported: '+event['body']['Description'] if 'Description' in event['body'] else 'no description.'})
+  if 'Class' not in event['body'] or event['body']['Class'] in ['Assault','Homicide','Sexual Assault'] or (event['body']['Confidence']>0.5 and num_results>1):
+    requests.post('https://gony0gqug0.execute-api.us-east-1.amazonaws.com/beta/send',data={'id':'_all','body':'Crime reported: '+event['body']['Description'] if 'Description' in event['body'] else 'no description.'})
   return { 
     'isBase64Encoded': True,
     'statusCode': 200,
