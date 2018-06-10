@@ -47,7 +47,7 @@
       }
       function pollCallback(data) {
         data.map(function(row) {
-          $('#panel').prepend('<div class=notif>'+Date.now()+': '+row+'</div>')
+          $('#panel').prepend('<div class=notif>'+new Date().toISOString()+': '+row+'</div>')
         })
         setTimeout(function() {
           $.post('https://gony0gqug0.execute-api.us-east-1.amazonaws.com/beta/notif',JSON.stringify({'id':'_police'}),function(data) {pollCallback(data)})
