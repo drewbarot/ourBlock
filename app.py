@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 @app.route('/post',methods=['POST'])
 def post():
+  print('HI');
   form = ast.literal_eval(dict(request.form).keys()[0])
   try:
     classified,confidence = classify(form['Description'])[0]
