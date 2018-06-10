@@ -33,11 +33,9 @@
 	            <nav>
 	                <input type="checkbox" id="mobile-menu-toggle" class="drawer-button">
 	                <ul id="plain-menu" class="drawer-menu mobile-left">
-	                    <li><a href="#">Home</a></li>
+	                    <li><a href="#">Search</a></li>
+	                    <li><a href="report.html">Report</a></li>
 	                    <li><a href="#">About</a></li>
-	                    <li><a href="#">Contact</a></li>
-	                    <li><a href="#">Stuff</a></li>
-	                    <li><a href="#">Things</a></li>
 	                </ul>
 	                <label class="mobile-left black drawer-toggle" for="mobile-menu-toggle">○</label>
 	            </nav>
@@ -60,12 +58,16 @@
 	          zoom: 14,
 	          mapTypeControl: false
 	        });
-
-	        heatmaps = new google.maps.visualization.HeatmapLayer({
-	        	data: heat_map,
-	        	map: map
-
-	        });
+	        var layer = new google.maps.FusionTablesLayer({
+		    query: {
+		      select: 'lat'+'lng',
+		      from: '1o_PRTDvzO38NPJ6twnZ_K3jJ1z7-OF1FgsEBck_q'
+		    },
+		    heatmap: {
+      enabled: true
+    }
+		  });
+	        layer.setMap(map)
 	        if (navigator.geolocation) {
 	          navigator.geolocation.getCurrentPosition(function(position) {
 	            pos = {
