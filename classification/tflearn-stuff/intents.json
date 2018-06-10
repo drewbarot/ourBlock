@@ -5,12 +5,12 @@
 	"context_set": ""
 	},
 	{"tag": "Auto Theft",
-	"patterns":["A red car was stolen", "A green car was stolen", "That car was hijacked", "An alarm in a car is going off", "My car is gone", "Somebody stole my car", "Somebody took my car"],
+	"patterns":["A red car was stolen", "A green car was stolen", "That car was hijacked", "An alarm in a car is going off", "My car is gone", "Somebody stole my car", "Somebody took my car", "car", "van", "suv", "tesla", "toyota"],
 	"responses":["Auto Theft"],
 	"context_set": ""
 	}, 
 	{"tag": "Break & Enter",
-	"patterns":["Somebody broke into my house", "Somebody stole something in my apartment", "Somebody stole something in my house", "Somebody stole something in my condo", "Somebody broke into my apartment unit", "Somebody broke into my condo", "I think he’s breaking into that house", "I think she’s breaking into that condo", "I think he’s breaking into that apartment"],
+	"patterns":["Somebody broke into my house", "Somebody stole something in my apartment", "Somebody stole something in my house", "Somebody stole something in my condo", "Somebody broke into my apartment unit", "Somebody broke into my condo", "I think he’s breaking into that house", "I think she’s breaking into that condo", "I think he’s breaking into that apartment", "house", "apartment", "condo"],
 	"responses": ["Break & Enter"],
 	"context_set": ""
 	},
@@ -25,7 +25,7 @@
 	"context_set": ""
 	},
 	{"tag": "Bike Theft",
-	"patterns":["He stole my bike", "She stole my bike", "My bike is gone", "Someone took my bike"],
+	"patterns":["He stole my bike", "She stole my bike", "My bike is gone", "Someone took my bike", "bike"],
 	"responses": ["Bike Theft"],
 	"context_set": ""
 	},
@@ -41,6 +41,18 @@
     "patterns": ["I don't think he's ok", "He's shouting", "He's yelling at no one", "I think he has mental health issues", "He's hurting himself", "She's hurting herself", "self harm", "I'm going to kill myself",
                 "He's going to kill himself", "She's going to kill herself"],
     "responses":["Mental Health"]
+    },
+    {"tag": "Drugs",
+    "patterns": ["Heroin needles", "This person seems high", "ectasy", "Amphetamines", "Cocaine", "Methamphetamine", "crack", "on drugs"],
+    "responses":["Drugs"]
+    },
+    {"tag": "Marijuana",
+    "patterns": ["Marijuana Dispensary", "weed", "smells like weed", "Marijuana"],
+    "responses":["Marijuana"]
+    },
+    {"tag": "Alcohol",
+    "patterns": ["People doing dumb things because they are drunk", "drunk in public", "smells like alcohol"],
+    "responses":["Alcohol"]
     }
 ]
 }
