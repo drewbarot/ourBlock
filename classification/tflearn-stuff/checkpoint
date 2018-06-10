@@ -1,0 +1,2 @@
+model_checkpoint_path: "/Users/charlielin/Projects/BLOCK-TO/classification/tflearn-stuff/model.tflearn"
+all_model_checkpoint_paths: "/Users/charlielin/Projects/BLOCK-TO/classification/tflearn-stuff/model.tflearn"
