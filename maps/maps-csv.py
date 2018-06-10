@@ -8,6 +8,7 @@ from sklearn.preprocessing import minmax_scale
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 from math import sqrt
+import pandas as pd
 
 data = OrderedDict()
 weights = []
@@ -43,8 +44,11 @@ for key in range(len(list(data.keys()))):
     delta = now - date_object
     
     num_hours = delta.days*24
-
-    weights.append(sqrt(1.0/num_hours) * 1000)
+    
+    if num_hours != 0:
+        weights.append(sqrt(1.0/num_hours) * 1000)
+    else:
+        weights.append(25)
 
 
 weights = np.array(weights)
@@ -58,9 +62,22 @@ weights = weights.tolist()
 
 points = OrderedDict()
 
-for i in range(num_points):
-    points[i] = {"Latitude": lat[i], "Longitude": long[i], "Weight": weights[i][0]}
+long_shit = []
+lat_shit = []
+weight_shit = []
 
-with open('heat_map.json', 'w') as f:
-    json.dump(points, f, indent=4, separators=(',', ': '))
+for i in range(num_points):
+    long_shit.append(long[i])
+    lat_shit.append(lat[i])
+    
+    weight_shit.append(weights[i][0])
+ 
+df = pd.DataFrame()
+
+df["lng"] = np.array(long_shit)
+df['lat'] = np.array(lat_shit)
+df ['weight'] = np.array(weight_shit)
+
+df.to_csv('heat_map.csv', index=False)
+
 
