@@ -7,7 +7,7 @@ app = Flask(__name__)
 def home():
   return render_template('index.html')
 
-@app.route('/post',method=['POST'])
+@app.route('/post',methods=['POST'])
 def post():
   try:
     classified,confidence = classify(request.form['Description'])

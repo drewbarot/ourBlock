@@ -13,7 +13,7 @@ import random
 # import our chat-bot intents file
 import json
 
-data = pickle.load( open( "training_data", "rb" ) )
+data = pickle.load( open( "model/training_data", "rb" ) )
 words = data['words']
 classes = data['classes']
 train_x = data['train_x']
@@ -27,7 +27,7 @@ net = tflearn.regression(net)
 
 model = tflearn.DNN(net, tensorboard_dir='tflearn_logs')
 # load our saved model
-model.load('./model.tflearn')
+model.load('./model/model.tflearn')
 
 def clean_up_sentence(sentence):
     # tokenize the pattern
@@ -75,6 +75,5 @@ def response(sentence, userID='123', show_details=False):
                 # find a tag matching the first result
                 if i['tag'] == results[0][0]:
                     # a random response from the intent
-                    return print(random.choice(i['responses']))
-
+                    print(random.choice(i['responses']))
             results.pop(0)
