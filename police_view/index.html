@@ -17,10 +17,9 @@
     <script type="text/javascript">
       function initMap() {
         $.post('https://gony0gqug0.execute-api.us-east-1.amazonaws.com/beta/search',JSON.stringify({'query':''}),function(data) {
-          console.log(data)
           var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 1,
-            center: {lat: 0, lng: 0}
+            zoom: 12,
+            center: {lat: 43.6532, lng: -79.3832}
           });
           function pinSymbol(color) {
             return {
@@ -33,15 +32,28 @@
              };
           }
           data.map(function (row) {
-              var myloc = {lat: parseFloat('1'), lng: parseFloat('2')};
+              var myloc = {lat: row['_source']['Latitude'], lng: row['_source']['Longitude']};
               var marker = new google.maps.Marker({
                 position: myloc,
                 map: map,
                 icon: pinSymbol('red')
               });
+              marker.addListener('dblclick',function() {
+                $.post('https://gony0gqug0.execute-api.us-east-1.amazonaws.com/beta/send',JSON.stringify({'id':'_all','body':'Resolved issue: '+row['_source']['Description']+'. You have been rewarded 1 token.'}),function(data) {})
+                marker.setMap(null)
+              })
           })
         })
       }
+      function pollCallback(data) {
+        data.map(function(row) {
+          $('#panel').prepend('<div class=notif>'+Date.now()+': '+row+'</div>')
+        })
+        setTimeout(function() {
+          $.post('https://gony0gqug0.execute-api.us-east-1.amazonaws.com/beta/notif',JSON.stringify({'id':'_police'}),function(data) {pollCallback(data)})
+        },5000)
+      }
+      pollCallback([])
   </script>
   <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6yQCFQnx_S7r_y_G-2XE6hd89JLcwqbY&callback=initMap">

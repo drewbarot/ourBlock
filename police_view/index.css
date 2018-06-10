@@ -1,5 +1,7 @@
 #panel {
   float: right;
+  width: calc(100% - 1500px);
+  overflow-wrap: normal;
   height: 100%;
 }
 
