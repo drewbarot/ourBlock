@@ -95,7 +95,7 @@ textarea {
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
 }
-
+'<div><p>'+row['_source']['Year']+'-'+row['_source']['Month']+'-'+row['_source']['Day']+': '+row['_source']['Description']+'</p></div>'
 .input__label::before,
 .input__label:after {
   content: '';
@@ -197,8 +197,8 @@ textarea {
   bottom: 15px;
 }
 		</style>
-		
-
+		    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
 	</head>
 	<body>
 		<div id="container">
@@ -206,18 +206,32 @@ textarea {
   <span class="input message">
     <textarea class="input__field" id="input-5"></textarea>
     <label for="input-5" class="input__label">
-      <span class="input__label-content">Report</span>
+      <span class="input__label-content">Search Query</span>
     </label>
   </span>
 
-  <button id="send-button" type="button">Send</button>
+  <button id="send-button" type="button">Search</button>
 
 </div>
 
 
 
 <script type="text/javascript">
-	object.addEventListener("click", myScript);
+    function myScript() {
+      $.post('https://gony0gqug0.execute-api.us-east-1.amazonaws.com/beta/search',data=JSON.stringify({'query':$('#input-5').val()}),function(data) {
+        var count = 0
+        data.map(function(row) {
+          if (count<10) {
+            $(document).ready(function() {
+              var element = $('<div><p style="color:white">'+row['_source']['Year']+'-'+row['_source']['Month']+'-'+row['_source']['Day']+': '+row['_source']['Description']+'</p></div>')
+              $('#container').append(element.get(0))
+            })
+            count+=1
+          }
+        })
+      })
+    }
+    document.getElementById('send-button').addEventListener("click", myScript);
 </script>
 
 

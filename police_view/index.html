@@ -36,7 +36,7 @@
               var marker = new google.maps.Marker({
                 position: myloc,
                 map: map,
-                icon: pinSymbol('red')
+                icon: pinSymbol(row['_source']['Class'] ? 'red' : 'blue')
               });
               marker.addListener('dblclick',function() {
                 $.post('https://gony0gqug0.execute-api.us-east-1.amazonaws.com/beta/send',JSON.stringify({'id':'_all','body':'Resolved issue: '+row['_source']['Description']+'. You have been rewarded 1 token.'}),function(data) {})

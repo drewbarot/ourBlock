@@ -198,7 +198,7 @@ textarea {
 }
 		</style>
 		
-
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<div id="container">
@@ -206,18 +206,30 @@ textarea {
   <span class="input message">
     <textarea class="input__field" id="input-5"></textarea>
     <label for="input-5" class="input__label">
-      <span class="input__label-content">Search Query</span>
+      <span class="input__label-content">Report</span>
     </label>
   </span>
 
-  <button id="send-button" type="button">Search</button>
+  <button id="send-button" type="button">Send</button>
 
 </div>
 
 
 
 <script type="text/javascript">
-	object.addEventListener("click", myScript);
+  function myScript(position) {
+    position = position || {'coords':{'latitude':43.67756,'longitude':-79.381163}}
+    output = {}
+    output['Description'] = $('#input-5').val()
+    time = new Date()
+    output['Year'] = time.getFullYear()
+    output['Month'] = time.getMonth()
+    output['Date'] = time.getDate()
+    output['Latitude'] = position.coords.latitude
+    output['Longitude'] = position.coords.longitude
+    $.post('http://127.0.0.1:5000/post',data=JSON.stringify(output))
+  }
+  document.getElementById('send-button').addEventListener("click",function() {navigator.geolocation.getCurrentPosition(myScript)});
 </script>
 
 
