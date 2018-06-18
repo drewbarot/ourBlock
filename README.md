@@ -1,7 +1,9 @@
 # ourBlock: _Bringing Neighborhood Watch Online_
 
 > You see a middle aged man in a red shirt furiously trying to open a bike lock.
+
 > You're not sure if this man owns the bike or if he's commiting a crime.
+
 > More than 5 minutes pass ... do you call the Police?
 
 ourBlock is a community safety app built to make crime reporting easy, fast and transparent. 
@@ -25,4 +27,4 @@ ourBlock is a community safety app built to make crime reporting easy, fast and 
 - Messages are stored in a Blockchain distributed network across user devices to prevent scaling database costs
 - Civilians are incentified to report with blockchain tokens awarded for reports that help solve crime
 
-## The result is that civilians can avoid danger and be notified of crimes potentially concerning them, and police can better allocate resources to tackle incidents by urgency.
+### The result is that civilians can avoid danger and be notified of crimes potentially concerning them, and police can better allocate resources to tackle incidents by urgency.
