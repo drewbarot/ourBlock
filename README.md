@@ -6,15 +6,15 @@
 
 ourBlock is a community safety app built to make crime reporting easy, fast and transparent. 
 
-<img src="https://github.com/charlielin99/ourBlock/blob/master/pitchdeck/app1.png?raw=true" height="280px"></img></br>
+<img src="https://github.com/charlielin99/ourBlock/blob/master/pitchdeck/app1.png?raw=true" height="320px" width="200px"></img></br>
 <sup><em>f1: An interactive heat map showing crimes in the city so civilians can stay safe.</em></sup>
 
 ### Tech Stack
-- Tensorflow classifier/spam filter was trained using a bag-of-words and stemming technique
-- GeoLocation is gathered using Google Maps API
-- Server side logic is hosted on AWS Lambda
-- The Police Portal is hosted on a Flask framework
-- The Civilian Mobile App is built on React-Native
+- **Tensorflow classifier/spam filter** was trained using a bag-of-words and stemming technique
+- GeoLocation is gathered using **Google Maps API**
+- Server side logic is hosted on **AWS Lambda**
+- The Police Portal is hosted on a **Flask framework**
+- The Civilian Mobile App is built on **React-Native**
 
 <img src="https://github.com/charlielin99/ourBlock/blob/master/pitchdeck/hub1.png?raw=true" height="280px"></img></br>
 <sup><em>f2: The police hub; automatically dispatches officers to the most urgent locations.</em></sup>
@@ -25,4 +25,4 @@ ourBlock is a community safety app built to make crime reporting easy, fast and 
 - Messages are stored in a Blockchain distributed network across user devices to prevent scaling database costs
 - Civilians are incentified to report with blockchain tokens awarded for reports that help solve crime
 
-The result is that civilians can avoid danger and be notified of crimes potentially concerning them, and police can better allocate resources to tackle incidents by urgency.
+##The result is that civilians can avoid danger and be notified of crimes potentially concerning them, and police can better allocate resources to tackle incidents by urgency.
