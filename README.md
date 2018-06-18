@@ -6,7 +6,7 @@
 
 ourBlock is a community safety app built to make crime reporting easy, fast and transparent. 
 
-<img src="https://github.com/charlielin99/ourBlock/blob/master/pitchdeck/app1.png?raw=true" height="320px" width="200px"></img></br>
+<img src="https://github.com/charlielin99/ourBlock/blob/master/pitchdeck/app1.png?raw=true" height="350px" width="190px"></img></br>
 <sup><em>f1: An interactive heat map showing crimes in the city so civilians can stay safe.</em></sup>
 
 ### Tech Stack
@@ -25,4 +25,4 @@ ourBlock is a community safety app built to make crime reporting easy, fast and 
 - Messages are stored in a Blockchain distributed network across user devices to prevent scaling database costs
 - Civilians are incentified to report with blockchain tokens awarded for reports that help solve crime
 
-##The result is that civilians can avoid danger and be notified of crimes potentially concerning them, and police can better allocate resources to tackle incidents by urgency.
+## The result is that civilians can avoid danger and be notified of crimes potentially concerning them, and police can better allocate resources to tackle incidents by urgency.
