@@ -15,13 +15,14 @@
 - **Tensorflow classifier/spam filter** was trained using a bag-of-words and stemming technique
 - GeoLocation is gathered using **Google Maps API**
 - Server side logic is hosted on **AWS Lambda**
-- The Police Portal is hosted on a **Flask framework**
+- The Police Portal is built on a **Flask framework**
 - The Civilian Mobile App is built on **React-Native**
+- Implemented crime searching using **Elasticsearch**
 
 <img src="https://github.com/charlielin99/ourBlock/blob/master/pitchdeck/hub1.png?raw=true" height="280px"></img></br>
 <sup><em>f2: The police hub; automatically dispatches officers to the most urgent locations.</em></sup>
 
-### Synopsis
+### How It Works
 - Reported crimes are geotagged and passed through a deep learning severity classification algorithm
 - Live heat maps are populated based on the severity and the frequency per location using triangularization
 - Messages are stored in a Blockchain distributed network across user devices to prevent scaling database costs
