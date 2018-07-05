@@ -14,7 +14,7 @@
 ### Tech Stack
 - **Tensorflow classifier/spam filter** was trained using a bag-of-words and stemming technique
 - GeoLocation is gathered using **Google Maps API**
-- Safe paths to navigate around crime calculated using the **A* algorithm**
+- Safe paths to navigate around crime calculated using the **A star algorithm**
 - Server side logic is hosted on **AWS Lambda**
 - The Police Portal is built on a **Flask framework**
 - The Civilian Mobile App is built on **React-Native**
