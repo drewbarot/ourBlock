@@ -3,6 +3,7 @@ from elasticsearch import Elasticsearch,RequestsHttpConnection
 import json
 #from run_prediction import classify
 import requests
+#from eth_block import sendCrime
 
 def post(event,context):
   event = json.loads(event['body'])
@@ -62,6 +63,7 @@ def post(event,context):
     num_results = 0
   if 'Class' not in event['body'] or event['body']['Class'] in ['Assault','Homicide','Sexual Assault'] or (event['body']['Confidence']>0.5 and num_results>1):
     requests.post('https://gony0gqug0.execute-api.us-east-1.amazonaws.com/beta/send',data={'id':'_all','body':'Crime reported: '+event['body']['Description'] if 'Description' in event['body'] else 'no description.'})
+  #sendCrime(event['body']['Latitude'],event['body']['Longitude'],event['body']['Description'])
   return { 
     'isBase64Encoded': True,
     'statusCode': 200,
