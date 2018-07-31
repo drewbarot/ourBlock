@@ -223,7 +223,7 @@ textarea {
         data.map(function(row) {
           if (count<10) {
             $(document).ready(function() {
-              var element = $('<div><p style="color:white">'+row['_source']['Year']+'-'+row['_source']['Month']+'-'+row['_source']['Day']+': '+row['_source']['Description']+'</p></div>')
+              var element = $('<div><p style="color:white">'+row['_source']['Year']+'-'+(row['_source']['Month']+1)+': '+row['_source']['Description']+'</p></div>')
               $('#container').append(element.get(0))
             })
             count+=1

@@ -4,15 +4,15 @@ import time
 from web3 import Web3, HTTPProvider
 import contract_abi
 
-contract_address = '0x32732aa7ff722de173fc0165cb9f55f07bda7a30'
-wallet_private_key   = '2d577094a754d0281d18c77af548a1eb7a30db927b3afaeac8f18207387a00ea'
-wallet_address       = '0x54D210c8784cf0A2031508339a81EC148953Ffa4'
+contract_address = Web3.toChecksumAddress('0x32732aa7ff722de173fc0165cb9f55f07bda7a30')
+wallet_private_key   = '267ce4750edc5da3db0379537885025b6a31f012fb22ef2b59487a67b7f79193'
+wallet_address       = Web3.toChecksumAddress('0xf2c5c9bb7acd064ccb568a655b0007298b3b1c90')
 
 w3 = Web3(HTTPProvider('https://ropsten.infura.io/TQqgYbZ0R31BSFiHJATb'))
 
 w3.eth.enable_unaudited_features()
 
-contract = w3.eth.contract(address = Web3.toChecksumAddress(contract_address), abi = contract_abi.abi)
+contract = w3.eth.contract(address = contract_address, abi = contract_abi.abi)
 
 def send_ether_to_approve_contract(amount_in_ether):
 
@@ -99,7 +99,7 @@ def broadcast_a_location(latitude, longitude, crime_classification):
 
 def sendCrime(latitude, longitude, crime):
 
-    send_ether_to_approve_contract(0.03)
+    send_ether_to_approve_contract(0.020001)
 
     is_approved = check_whether_address_is_approved(wallet_address)
     
@@ -107,4 +107,4 @@ def sendCrime(latitude, longitude, crime):
 
     broadcast_a_location(latitude, longitude, crime)
 
-sendCrime(43.6532, 79.3832, 'Breaking & Entering')
+    print(latitude, longitude, crime)
