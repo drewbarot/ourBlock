@@ -13,6 +13,7 @@
 
 ### Tech Stack
 - **Tensorflow classifier/spam filter** was trained using a bag-of-words and stemming technique
+- Messages posted to the Ethereum network using **Web3 & Solidity**
 - GeoLocation is gathered using **Google Maps API**
 - Safe paths to navigate around crime calculated using the **A star algorithm**
 - Server side logic is hosted on **AWS Lambda**
@@ -25,8 +26,8 @@
 
 ### How It Works
 - Reported crimes are geotagged and passed through a deep learning severity classification algorithm
-- Live heat maps are populated based on the severity and the frequency per location using triangularization
+- Live heat maps are populated based on the severity and the frequency per location using triangulation
 - Messages are stored in a Blockchain distributed network across user devices to prevent scaling database costs
-- Civilians are incentified to report with blockchain tokens awarded for reports that help solve crime
+- Civilians are incentivized to report with ethereum tokens awarded for reports that help solve crime
 
-#### The result is that civilians can avoid danger and be notified of crimes potentially concerning them, and police can better allocate resources to tackle incidents by urgency.
+#### The result is that civilians can avoid / navigate around danger, search for and be notified of crime that may potential involve them, and police can better allocate resources to tackle incidents by urgency at a minimal cost. The community is also transparent and closer than it ever has been with a "I scratch your back if you scratch mine" mentality. All of this is done with the automation provided by machine learning and the distributed blockchain system.
