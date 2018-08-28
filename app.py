@@ -18,11 +18,10 @@ def post():
   except Exception as e:
     print(e)
     classified,confidence = '',0
-  data = {}
-  data['body'] = form
-  data['body']['Class'] = classified
-  data['body']['Confidence'] = float(confidence)
-  print(data['body']['Class'],data['body']['Confidence'])
+  data = form
+  data['Class'] = classified
+  data['Confidence'] = float(confidence)
+  print(data['Class'],data['Confidence'])
   print(form)
   sendCrime(float(form['Latitude']),float(form['Longitude']),form['Class'])
   requests.post('https://gony0gqug0.execute-api.us-east-1.amazonaws.com/beta/post',json=data)
