@@ -1,3 +1,17 @@
+## IF RUN FAILS CHANGE PACKAGE.JSON DEPENCENDIES 
+
+  "dependencies": {
+    "color": "1.0.3",
+    "lodash": "4.13.1",
+    "moment": "2.13.0",
+    "native-base": "2.5.1",
+    "react": "16.3.1",
+    "react-native": "0.55.4",
+    "react-native-vector-icons": "4.5.0",
+    "react-navigation": "1.5.0"
+  }
+
+
 # NativeBase KitchenSink v2.5.0
 An example app with all the UI components of NativeBase
 
