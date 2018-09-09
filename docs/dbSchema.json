@@ -1,0 +1,32 @@
+{
+    "report": {
+        "lat": "double [-90, 90]",
+        "lon": "double [-90, 90]",
+        "time": "timestamp",
+        "status": "oneof ['pending', 'in progress', 'solved by public', 'solved by police']",
+        "privacy": "oneof ['public', 'private']",
+        "reportingUser": "user",
+        "anonymous": "boolean",
+        "message": "string",
+        "category": "string, oneof the catogories",
+        "upvoters": "listof user",
+        "upvoterCount": "int",
+        "downvoters": "listof user",
+        "downvoterCount": "int",
+        "followers": "listof user",
+        "followerCount": "int",
+        "comments": "listof comment",
+        "commentCount": "int"
+    },
+
+    "user (data will only be hardcoded)": {
+        "name": "string",
+        "handle": "unique string"
+    },
+
+    "comment": {
+        "user": "user",
+        "anonymous": "boolean",
+        "message": "string"
+    }
+}
