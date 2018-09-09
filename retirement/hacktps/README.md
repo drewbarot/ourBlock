@@ -8,7 +8,7 @@
 
 #### ourBlock is a community safety app built to make crime reporting easy, fast and transparent. 
 
-<img src="https://github.com/charlielin99/ourBlock/blob/master/pitchdeck/app1.png?raw=true" height="350px" width="190px"></img></br>
+<img src="https://github.com/charlielin99/ourBlock/blob/master/retirement/hacktps/imgs/app1.png?raw=true" height="350px" width="190px"></img></br>
 <sup><em>f1: An interactive heat map showing crimes in the city so civilians can stay safe.</em></sup>
 
 ### Tech Stack
@@ -21,7 +21,7 @@
 - The Civilian Mobile App is built on **React-Native**
 - Implemented crime searching using **Elasticsearch**
 
-<img src="https://github.com/charlielin99/ourBlock/blob/master/pitchdeck/hub1.png?raw=true" height="280px"></img></br>
+<img src="https://github.com/charlielin99/ourBlock/blob/master/retirement/hacktps/imgs/hub1.png?raw=true" height="280px"></img></br>
 <sup><em>f2: The police hub; automatically dispatches officers to the most urgent locations.</em></sup>
 
 ### How It Works
