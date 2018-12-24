@@ -13,15 +13,6 @@
         <Linegraph />
       </md-content>
       <md-content class="md-elevation-2">
-        <h4> Distributed Node Network Graph </h4>
-        <Nodes style="zoom: 56%;"></Nodes>
-      </md-content>
-      <md-content class="md-elevation-2">
-        <h4> Neural Network Training Rate </h4>
-        <div id="trainingStep">Training Step: {{iter}} </div>  
-        <img style="height:250px;" :src="require('./assets/neuralnetgraph.gif')">
-      </md-content>
-      <md-content class="md-elevation-2">
         <h4> Crime Category Breakdown </h4>
         <Donutgraph />
       </md-content>
@@ -68,14 +59,12 @@
       >
         <h4> Crime Status Breakdown </h4>
         <Piegraph :pie-data="statsPie"/>
-        <!-- <h2> Reports from last 7 days: {{ statsTotal }} </h2> -->
       </md-content>
     </md-content>
   </div>
 </template>
 
 <script>
-  import Vue from 'vue'
   import axios from 'axios';
   import Card from './components/Card.vue'
   import Map from './components/Map.vue'
@@ -84,7 +73,6 @@
   import Piegraph from './components/Piegraph.vue'
   import Donutgraph from './components/Donutgraph.vue'
   import Scattergraph from './components/Scattergraph.vue'
-  import Nodes from './components/blockchain-nodes/example/Example.vue'
 
   window.onload = function() {
     this.screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -98,7 +86,7 @@
     name: 'app',
 
     components: {
-      Card, Map, Bargraph, Linegraph, Piegraph, Donutgraph, Scattergraph, Nodes
+      Card, Map, Bargraph, Linegraph, Piegraph, Donutgraph, Scattergraph
     },
 
     data() {

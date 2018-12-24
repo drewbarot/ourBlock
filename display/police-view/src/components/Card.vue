@@ -126,7 +126,7 @@
     },
 
     methods: {
-      updateStatus: (id, field, value) => 0
+      updateStatus: () => 0
     }
   }
 </script>

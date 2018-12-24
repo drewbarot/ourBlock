@@ -56,6 +56,8 @@ export default {
         height: 180,
         legend: { position: 'none' },
         hAxis: { 
+          maxValue: 24,
+          gridlines: 8,
           titleTextStyle: { position: 'none' }, 
           position: 'none'
         }

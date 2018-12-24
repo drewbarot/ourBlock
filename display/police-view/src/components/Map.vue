@@ -56,17 +56,17 @@ export default {
 
   methods: {
     markerClicked(event, id) {
-      console.log(event, id)
+      // console.log(event, id)
       this.$emit('markerClicked', id);
     },
 
     changeBounds(event) {
       if (event){
         this.currBounds = {
-          lonMin: event.b.b,
-          lonMax: event.b.f,
-          latMin: event.f.b,
-          latMax: event.f.f
+          lonMin: event.ga.j,
+          lonMax: event.ga.l,
+          latMin: event.ma.j,
+          latMax: event.ma.l
         };
       }
     }
