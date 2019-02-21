@@ -1,3 +1,6 @@
 [submodule "display"]
 	path = display
 	url = git@github.com:BradHuang1999/ourBlock-ImagineCup-Display.git
+[submodule "retirement/techCrunch"]
+	path = retirement/techCrunch
+	url = git@github.com:BradHuang1999/ourBlock-DisruptSF.git
